@@ -1,12 +1,22 @@
-// src/components/ImageGallery.jsx
 import React, { useRef } from "react";
 
-const ImageGallery = ({ title, items }) => {
-  const scrollRef = useRef(null);
+interface GalleryItem {
+  src: string;
+  alt: string;
+  caption?: string;
+}
 
-  const scroll = (direction) => {
+interface ImageGalleryProps {
+  title: string;
+  items: GalleryItem[];
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ title, items }) => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const scroll = (direction: "next" | "prev") => {
     if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
+      const { clientWidth } = scrollRef.current;
       const scrollAmount = direction === "next" ? clientWidth : -clientWidth;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
@@ -17,21 +27,20 @@ const ImageGallery = ({ title, items }) => {
       <h2 className="text-white text-[40px] font-semibold mb-6">{title}</h2>
 
       {/* Navigation Buttons */}
-        <button
-          onClick={() => scroll("prev")}
-          className="absolute left-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
-          aria-label="Previous"
-        >
-          ‹
-        </button>
-        <button
-          onClick={() => scroll("next")}
-          className="absolute right-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
-          aria-label="Next"
-        >
-          ›
-        </button>
-
+      <button
+        onClick={() => scroll("prev")}
+        className="absolute left-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
+        aria-label="Previous"
+      >
+        ‹
+      </button>
+      <button
+        onClick={() => scroll("next")}
+        className="absolute right-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
+        aria-label="Next"
+      >
+        ›
+      </button>
 
       {/* Scrollable Gallery */}
       <div
