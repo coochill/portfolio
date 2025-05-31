@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Paintbrush, Code, Database, Sparkles } from "lucide-react";
-import ImageGallery from "../components/ImageGallery";
+import ImageGallery from "../components/ImageGallery.jsx";
 
 import img1 from "../assets/datu_torch.png";
 import img2 from "../assets/bakunawa-animation.gif";

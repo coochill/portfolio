@@ -38,7 +38,7 @@ const Home = () => {
       category: "Web Application",
       featured: false,
       icon: <Star className="w-5 h-5" />,
-      gradient: "from-purple-400 to-pink-500"
+      gradient: "from-blue-400 to-red-500"
     },
     {
       title: "ALUtron",
@@ -46,7 +46,7 @@ const Home = () => {
       githubUrl: "https://github.com/coochill/ALUtron",
       technologies: ["Tailwind", "React", "Flask"],
       category: "Educational Tool",
-      featured: false,
+      featured: true,
       icon: <Code className="w-5 h-5" />,
       gradient: "from-blue-400 to-cyan-500"
     },
@@ -78,8 +78,29 @@ const Home = () => {
       category: "Disaster Detection Tool",
       featured: false,
       icon: <Code className="w-5 h-5" />,
-      gradient: "from-indigo-400 to-purple-500"
+      gradient: "from-yellow-400 to-purple-500"
+    },
+    {
+      title: "Recurs-IVE It!",
+      description: "Recurs-IVE It! is a web-based Recursive Algorithm Simulator that helps users understand and visualize recursion through interactive real-time animations. It supports various algorithms, including Fibonacci, Factorial, Merge Sort, Quick Sort (both random and non-random), and Catalan Numbers. With features like play/pause controls and secure data handling through input validation and encryption, the platform offers an engaging and hands-on experience for students and developers to grasp recursion concepts more clearly.",
+      githubUrl: "https://github.com/coochill/Recurs-IVE-It",
+      technologies: ["Firebase", "Three.js", "React", "Flask"],
+      category: "Algorithm Simulator",
+      featured: true,
+      icon: <Code className="w-5 h-5" />,
+      gradient: "from-red-400 to-rose-500"
+    },
+    {
+      title: "Go-Cery",
+      description: "Go-Cery is a cutting-edge Android application that enhances the efficiency of traditional grocery shopping by leveraging modern technology. With Go-Cery, customers enjoy a faster, more streamlined experience, while store owners efficiently manage their inventory and operations.",
+      githubUrl: "https://github.com/MannLester/Go-Cery",
+      technologies: ["Firebase", "Glide", "Android Studio"],
+      category: "QR Code Generator and Scanning Tool",
+      featured: false,
+      icon: <Code className="w-5 h-5" />,
+      gradient: "from-blue-400 to-orange-500"
     }
+
   ];
 
   return (
