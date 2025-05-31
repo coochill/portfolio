@@ -82,7 +82,7 @@ const Home = () => {
     },
     {
       title: "Recurs-IVE It!",
-      description: "Recurs-IVE It! is a web-based Recursive Algorithm Simulator that helps users understand and visualize recursion through interactive real-time animations. It supports various algorithms, including Fibonacci, Factorial, Merge Sort, Quick Sort (both random and non-random), and Catalan Numbers. With features like play/pause controls and secure data handling through input validation and encryption, the platform offers an engaging and hands-on experience for students and developers to grasp recursion concepts more clearly.",
+      description: "Recurs-IVE It! is a web-based Recursive Algorithm Simulator that helps users understand and visualize recursion through interactive real-time animations.",
       githubUrl: "https://github.com/coochill/Recurs-IVE-It",
       technologies: ["Firebase", "Three.js", "React", "Flask"],
       category: "Algorithm Simulator",
