@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Paintbrush, Code, Database, Sparkles } from "lucide-react";
-import ImageGallery from "../components/ImageGallery.jsx";
+import ImageGallery from "../components/ImageGallery";
 
 import img1 from "../assets/datu_torch.png";
 import img2 from "../assets/bakunawa-animation.gif";
@@ -14,7 +14,7 @@ import img9 from "../assets/recursive-logo-2.png";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
+  visible: (i:number) => ({
     opacity: 1,
     y: 0,
     transition: { delay: i * 0.15, ease: "easeOut" },
@@ -118,7 +118,7 @@ function SkillsSection() {
 
                 {/* Skills List */}
                 <div className="space-y-3">
-                  {card.items.map((item, index) => (
+                  {card.items.map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.color}`}></div>
                       <span className="text-lg text-gray-300">{item}</span>

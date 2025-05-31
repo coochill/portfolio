@@ -1,5 +1,5 @@
 import profilePhoto from "../assets/profile-photo.jpg"; 
-import { Calendar, Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import { Calendar, Mail, MapPin, MessageCircle } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -147,8 +147,8 @@ const AboutSection = () => {
               <div className="flex flex-col items-center text-center">
                 {/* Google-themed icon */}
                 <div className="relative mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 rounded-2xl transform rotate-3 scale-110 opacity-20"></div>
-                  <div className="relative bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 p-4 rounded-2xl transform group-hover:rotate-0 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-red-500 to-green-500 rounded-2xl transform rotate-3 scale-110 opacity-20"></div>
+                  <div className="relative bg-gradient-to-r from-blue-500 via-red-500 to-green-500 p-4 rounded-2xl transform group-hover:rotate-0 transition-transform duration-500">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const AboutSection = () => {
                 
                 <a 
                   href="mailto:joysusette@gmail.com"
-                  className="text-lg font-medium bg-gradient-to-r from-blue-500 via-red-500 via-yellow-500 to-green-500 bg-clip-text text-transparent hover:from-red-500 hover:to-white transition-all duration-300 mb-4"
+                  className="text-lg font-medium bg-gradient-to-r from-blue-500 via-red-500  to-green-500 bg-clip-text text-transparent hover:from-red-500 hover:to-white transition-all duration-300 mb-4"
                 >
                   joysusette@gmail.com
                 </a>

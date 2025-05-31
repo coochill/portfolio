@@ -322,7 +322,7 @@ const Home = () => {
           {/* Featured Projects Grid */}
           <div className="mb-16">
             <div className="grid md:grid-cols-2 gap-8">
-              {projects.filter(project => project.featured).map((project, index) => (
+              {projects.filter(project => project.featured).map((project) => (
                 <div
                   key={project.title}
                   className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 shadow-2xl border border-gray-800 transform hover:scale-105 transition-all duration-300 group"
