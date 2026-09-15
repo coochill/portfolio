@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryItem {
   src: string;
@@ -32,14 +33,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ title, items }) => {
         className="absolute left-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
         aria-label="Previous"
       >
-        ‹
+        <ChevronLeft size={20} aria-hidden="true" />
       </button>
       <button
         onClick={() => scroll("next")}
         className="absolute right-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
         aria-label="Next"
       >
-        ›
+        <ChevronRight size={20} aria-hidden="true" />
       </button>
 
       {/* Scrollable Gallery */}
