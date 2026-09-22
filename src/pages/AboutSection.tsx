@@ -1,5 +1,5 @@
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
-import profilePhoto from "../assets/profile-photo.jpg";
+import profilePhoto from "../assets/profile-pic-new.jpg";
 
 const AboutSection = () => (
   <section id="about" className="about-section section section--paper">
@@ -7,7 +7,7 @@ const AboutSection = () => (
       <div className="about-photo-wrap"><img src={profilePhoto} alt="Joy Susette Domingo" className="about-photo" /></div>
       <div className="about-copy">
         <p className="eyebrow">About me</p>
-        <h2>Curious by default. Careful by design.</h2>
+        <h2>JOY SUSETTE V. DOMINGO</h2>
         <p>I am a Computer Science graduate from Batangas State University who enjoys moving between structure and expression: shaping a clear user experience, then building the system that supports it.</p>
         <p>My work spans frontend development, backend development, UI/UX design, and visual experimentation. I am currently open to opportunities where I can keep learning while contributing thoughtfully.</p>
         <div className="about-meta"><span>Based in Cabuyao, Laguna</span><span>Open to opportunities</span><span>Computer Science</span></div>
