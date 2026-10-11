@@ -158,7 +158,7 @@ const Home = () => (
 
     <SkillsSection />
 
-    <section id="bonus" className="section section--paper">
+    <section id="bonus" className="section section--muted">
       <div className="section-inner">
         <div className="section-heading"><h2>A little room for visual experiments.</h2><p>Graphic studies and identity work live here, intentionally kept secondary to the software projects.</p></div>
         <div className="bonus-gallery"><ImageGallery title="Graphic studies" items={graphics} /><ImageGallery title="Project marks" items={logos} /></div>
@@ -166,6 +166,10 @@ const Home = () => (
     </section>
 
     <footer id="contact" className="site-footer">
+      <div>
+        <p className="footer-label">Get in touch</p>
+        <h2>Have a project in mind?</h2>
+      </div>
         <div className="footer-contact">
           <a href="mailto:joysusette@gmail.com">
             <Mail size={30} aria-hidden="true" /> joysusette@gmail.com
