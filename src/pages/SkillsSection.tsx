@@ -1,13 +1,15 @@
-import { Palette } from "lucide-react";
+import { Code2, Database, Smartphone, Brain, type LucideIcon } from "lucide-react";
 
 type SkillGroup = {
   title: string;
+  icon: LucideIcon;
   items: Badge[];
 };
 
 const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
+    icon: Code2,
     items: [
       { label: "JavaScript", color: "F7DF1E", text: "111111", logo: "javascript" },
       { label: "TypeScript", color: "3178C6", text: "FFFFFF", logo: "typescript" },
@@ -17,6 +19,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: "Backend & data",
+    icon: Database,
     items: [
       { label: "PHP", color: "777BB4", text: "FFFFFF", logo: "php" },
       { label: "Laravel", color: "FF2D20", text: "FFFFFF", logo: "laravel" },
@@ -30,6 +33,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: "Mobile & IoT",
+    icon: Smartphone,
     items: [
       { label: "Java", color: "ED8B00", text: "FFFFFF", logo: "openjdk" },
       { label: "Android", color: "3DDC84", text: "111111", logo: "android" },
@@ -37,6 +41,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     title: "AI & tooling",
+    icon: Brain,
     items: [
       { label: "PyTorch", color: "EE4C2C", text: "FFFFFF", logo: "pytorch" },
       { label: "Docker", color: "2496ED", text: "FFFFFF", logo: "docker" },
@@ -66,7 +71,7 @@ function SkillsSection() {
           {skillGroups.map((group) => (
             <div className="skill-group" key={group.title}>
               <h3>
-                <Palette size={16} aria-hidden="true" />
+                <group.icon size={16} aria-hidden="true" />
                 {group.title}
               </h3>
               <div className="badge-grid">
