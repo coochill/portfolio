@@ -11,7 +11,6 @@ import logoOne from "../assets/Geominder-logo.png";
 import logoTwo from "../assets/Geominder-logo-2.png";
 import logoThree from "../assets/recursive-logo.png";
 import logoFour from "../assets/recursive-logo-2.png";
-import profilePhoto from "../assets/profile-pic-new.jpg";
 
 const projects = [
   { number: "01", title: "CodeCrypt v2.0", type: "Educational cipher learning platform · September 2025 - December 2025", description: "An educational web platform for learning cryptography through interactive activities, including MineCipher, a Vigenère cipher learning game with adjustable difficulty.", stack: ["React", "Vite", "Tailwind CSS", "Flask"], url: "https://github.com/coochill/CodeCrypt-v2.0", accent: "#0074d2" },
@@ -52,9 +51,6 @@ const Home = () => (
           </div>
         </div>
         <div className="hero-aside" aria-label="Availability and location">
-          <div className="hero-portrait-wrap">
-            <img src={profilePhoto} alt="Joy Susette Domingo" className="hero-portrait" />
-          </div>
           <p className="hero-aside__label">Currently</p>
           <p>Open to junior software development opportunities.</p>
           <div className="hero-location"><MapPin size={15} aria-hidden="true" /> Cabuyao, Laguna, PH</div>
