@@ -256,13 +256,14 @@ body { background: var(--paper); color: var(--ink); }
 .about-meta span { color: var(--muted); }
 .about-links { gap: 18px; }
 
-.project-grid { gap: 12px; }
+.project-grid { gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .project-card,
 .project-card:nth-child(1),
 .project-card:nth-child(2) {
   background: var(--surface) !important;
   border: 1px solid var(--line);
   color: var(--ink);
+  grid-column: auto;
   min-height: 360px;
   padding: 26px;
 }
