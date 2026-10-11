@@ -41,22 +41,21 @@ const Home = () => (
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-inner">
         <div className="hero-copy">
-          <p className="eyebrow">Computer Science graduate / junior developer</p>
-          <h1 id="hero-title">I build software that solves real problems.</h1>
-          <p className="hero-intro">I&apos;m <strong>Joy Susette Domingo</strong>, a Cum Laude Computer Science graduate from Batangas State University - The National Engineering University. I build web applications, backend systems, and practical software projects using technologies like React, Python, Flask, Node.js, and Firebase.</p>
-          <p className="hero-intro">From interactive learning platforms to IoT systems and computer vision research, I enjoy turning ideas into working software with attention to both how it works and how people use it.</p>
+          <p className="eyebrow">Junior software engineer</p>
+          <h1 id="hero-title">Finding joy in solving problems.</h1>
+          <p className="hero-philosophy">Grounded in fundamentals. Driven by curiosity. Building with purpose.</p>
+          <p className="hero-intro">I&apos;m <strong>Joy Susette V. Domingo</strong>, a Cum Laude Computer Science graduate from Batangas State University - The National Engineering University. I&apos;m interested in software development and practical applications that make complex things useful.</p>
           <div className="hero-actions">
-            <a className="button button--dark" href="#projects">View selected work <ArrowDownRight size={17} aria-hidden="true" /></a>
+            <a className="button button--dark" href="#projects">Explore my work <ArrowDownRight size={17} aria-hidden="true" /></a>
             <a className="text-link" href="mailto:joysusette@gmail.com">Get in touch <ArrowUpRight size={16} aria-hidden="true" /></a>
           </div>
         </div>
         <div className="hero-aside" aria-label="Availability and location">
-          <div className="hero-stamp">JS<span>24</span></div>
-          <p>Open to opportunities<br />in software and product work.</p>
+          <p className="hero-aside__label">Currently</p>
+          <p>Open to junior software development opportunities.</p>
           <div className="hero-location"><MapPin size={15} aria-hidden="true" /> Cabuyao, Laguna, PH</div>
         </div>
       </div>
-      <div className="hero-footer"><span>01 / 04</span><span>Scroll to explore</span><span className="hero-line" /></div>
     </section>
 
     <AboutSection />

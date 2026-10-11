@@ -7,9 +7,9 @@ const AboutSection = () => (
       <div className="about-photo-wrap"><img src={profilePhoto} alt="Joy Susette Domingo" className="about-photo" /></div>
       <div className="about-copy">
         <p className="eyebrow">About me</p>
-        <h2>JOY SUSETTE V. DOMINGO</h2>
-        <p>I am a Computer Science graduate from Batangas State University who enjoys moving between structure and expression: shaping a clear user experience, then building the system that supports it.</p>
-        <p>My work spans frontend development, backend development, UI/UX design, and visual experimentation. I am currently open to opportunities where I can keep learning while contributing thoughtfully.</p>
+        <h2>Engineering with context.</h2>
+        <p>I build from fundamentals: understand the problem, make the system legible, and choose tools that serve the people using it.</p>
+        <p>My foundation spans frontend and backend development, data, testing, and UI/UX. I learn quickly, work reliably, and enjoy adapting emerging technologies such as AI when they have a clear, useful role.</p>
         <div className="about-meta"><span>Based in Cabuyao, Laguna</span><span>Open to opportunities</span><span>Computer Science</span></div>
         <div className="about-links"><a href="https://github.com/coochill" target="_blank" rel="noreferrer">GitHub <Github size={15} /></a><a href="https://www.linkedin.com/in/joy-susette-domingo-937759342/" target="_blank" rel="noreferrer">LinkedIn <Linkedin size={15} /></a><a href="mailto:joysusette@gmail.com">Email <Mail size={15} /></a><a href="#projects">See work <ArrowUpRight size={15} /></a></div>
       </div>

@@ -23,7 +23,7 @@ const NavBar = () => {
           </a>
         ))}
         <a className="nav-contact" href="mailto:joysusette@gmail.com">
-          Let&apos;s talk <ArrowUpRight size={15} aria-hidden="true" />
+          Get in touch <ArrowUpRight size={15} aria-hidden="true" />
         </a>
       </div>
 
@@ -44,7 +44,7 @@ const NavBar = () => {
           </a>
         ))}
         <a href="mailto:joysusette@gmail.com" onClick={() => setIsOpen(false)}>
-          Let&apos;s talk <ArrowUpRight size={18} aria-hidden="true" />
+          Get in touch <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>}
     </nav>

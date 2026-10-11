@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## Contact behavior
+
+The portfolio uses a direct `mailto:` link to `joysusette@gmail.com` from the navigation, hero, About section, and footer. This opens the visitor's configured email application; it does not send email from the site and does not require a serverless function, SMTP credentials, or Vercel environment variables.
+
+Because the site is a static Vite application, this contact approach remains compatible with the existing Vercel deployment. If direct form submission is needed later, add a Vercel-compatible email provider through a serverless API and keep its private API key in Vercel environment variables rather than frontend code.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
