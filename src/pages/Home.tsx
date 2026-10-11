@@ -44,7 +44,7 @@ const Home = () => (
         <span className="status-dot" aria-hidden="true" />
         Open to junior software engineering roles
       </div>
-      <p className="eyebrow">Joy Susette · Junior software engineer</p>
+      <p className="eyebrow">Junior software engineer</p>
       <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
       <p className="hero-philosophy">
         I build web, Android, and IoT systems, and I care about the parts people don't see: clean logic, tested code, and data that makes sense.
@@ -67,21 +67,17 @@ const Home = () => (
         </div>
         <div>
           <dt>Specialty</dt>
-          <dd>Full-stack web, Android, IoT</dd>
+          <dd>Full-stack web, Android</dd>
         </div>
         <div>
           <dt>Core stack</dt>
-          <dd>React · Flask · Firebase · Java</dd>
+          <dd>PHP · Laravel · Python · React · Flask · Firebase · JavaScript</dd>
         </div>
         <div>
           <dt>Current quest</dt>
           <dd>A team that ships real products and cares about how they're built</dd>
         </div>
       </dl>
-      <figure className="quest-card__art">
-        <img src={graphicTwo} alt="" />
-        <figcaption>Bakunawa, guardian of the sea</figcaption>
-      </figure>
     </aside>
   </div>
 </section>
@@ -91,7 +87,7 @@ const Home = () => (
     <section id="projects" className="section section--ink">
       <div className="section-inner">
         <div className="section-heading section-heading--light">
-          <p className="eyebrow">Selected work</p>
+          <p className="eyebrow-diff">Selected work</p>
           <h2>Projects with a purpose behind the interface.</h2>
           <p>A small selection of collaborative, academic, and independent work. Each one started with a problem worth understanding.</p>
         </div>

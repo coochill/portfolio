@@ -7,7 +7,7 @@ const AboutSection = () => (
       <div className="about-photo-wrap"><img src={profilePhoto} alt="Joy Susette Domingo" className="about-photo" /></div>
       <div className="about-copy">
         <h2>Engineering with context.</h2>
-        <p>I&apos;m <strong>Joy Susette V. Domingo</strong>, a Cum Laude Computer Science graduate from Batangas State University - The National Engineering University. I&apos;m interested in software development and practical applications that make complex things useful.</p>
+        <p>I&apos;m <strong className="emphasis">Joy Susette V. Domingo</strong>, a Cum Laude Computer Science graduate from Batangas State University - The National Engineering University. I&apos;m interested in software development and practical applications that make complex things useful.</p>
         <p>I build from fundamentals: understand the problem, make the system legible, and choose tools that serve the people using it.</p>
         <p>My foundation spans frontend and backend development, data, testing, and UI/UX. I learn quickly, work reliably, and enjoy adapting emerging technologies such as AI when they have a clear, useful role.</p>
         <div className="about-meta"><span>Based in Cabuyao, Laguna</span><span>Open to opportunities</span><span>Computer Science</span></div>
