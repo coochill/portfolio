@@ -769,3 +769,11 @@ body { background: var(--paper); color: var(--ink); }
     padding-top: 136px;
   }
 }
+
+.footer-contact a svg {
+  flex-shrink: 0;
+}
+
+.footer-contact a {
+  line-height: 1.1;
+}

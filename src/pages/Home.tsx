@@ -12,6 +12,7 @@ import logoTwo from "../assets/Geominder-logo-2.png";
 import logoThree from "../assets/recursive-logo.png";
 import logoFour from "../assets/recursive-logo-2.png";
 
+
 const projects = [
   { number: "01", title: "CodeCrypt v2.0", type: "Educational cipher learning platform · September 2025 - December 2025", description: "An educational web platform for learning cryptography through interactive activities, including MineCipher, a Vigenère cipher learning game with adjustable difficulty.", stack: ["React", "Vite", "Tailwind CSS", "Flask"], url: "https://github.com/coochill/CodeCrypt-v2.0", accent: "#0074d2" },
   { number: "02", title: "GoCery", type: "Android grocery management application · March 2025 - April 2025", description: "An Android grocery management application supporting store and customer workflows, inventory management, purchase history, and Firebase-backed data operations. Includes automated functional and UI testing.", stack: ["Java", "Android Studio", "Firebase Database", "JUnit", "AndroidX Test", "Espresso", "Mockito", "Hamcrest"], url: "https://github.com/MannLester/Go-Cery", accent: "#fffd3c" },
@@ -34,6 +35,23 @@ const logos = [
   { src: logoThree, alt: "Recursive algorithm project logo" },
   { src: logoFour, alt: "Alternate recursive algorithm project logo" },
 ];
+
+const ViberIcon = ({ size = 30 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M12 2C6.5 2 2 5.9 2 10.8c0 2.6 1.3 4.9 3.3 6.5L4.5 22l4.9-2.3c.8.2 1.6.3 2.6.3 5.5 0 10-3.9 10-8.8S17.5 2 12 2z" />
+    <path
+      d="M9.2 7.2c.2-.4.6-.6 1-.5l1 .3c.4.1.6.5.5.9l-.4 1.1c-.1.3-.1.6.1.8l1.6 1.6c.2.2.5.2.8.1l1.1-.4c.4-.1.8.1.9.5l.3 1c.1.4-.1.8-.5 1-.9.5-2 .4-2.9-.2-1.6-1.1-2.9-2.4-3.9-4-.6-.9-.7-2-.2-2.9z"
+      style={{ fill: "var(--ink)" }}
+    />
+  </svg>
+);
 
 const Home = () => (
   <main id="top">
@@ -148,13 +166,13 @@ const Home = () => (
     </section>
 
     <footer id="contact" className="site-footer">
-      <div>
-        <p className="footer-label">Get in touch</p>
-        <h2>Have a project in mind?</h2>
-      </div>
-      <div className="footer-contact">
-        <a href="mailto:joysusette@gmail.com"><Mail size={17} aria-hidden="true" /> joysusette@gmail.com</a>
-        <a href="tel:+639759663135">Viber: 09759663135</a>
+        <div className="footer-contact">
+          <a href="mailto:joysusette@gmail.com">
+            <Mail size={30} aria-hidden="true" /> joysusette@gmail.com
+          </a>
+          <a href="tel:+639759663135">
+            <ViberIcon /> Viber: 09759663135
+          </a>
       </div>
     </footer>
   </main>
