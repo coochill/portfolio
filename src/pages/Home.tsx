@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Github, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Github, Mail } from "lucide-react";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
 import ImageGallery from "../components/ImageGallery";
@@ -42,18 +42,11 @@ const Home = () => (
       <div className="hero-inner">
         <div className="hero-copy">
           <p className="eyebrow">Junior software engineer</p>
-          <h1 id="hero-title">Finding joy in solving problems.</h1>
+          <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
           <p className="hero-philosophy">Grounded in fundamentals. Driven by curiosity. Building with purpose.</p>
-          <p className="hero-intro">I&apos;m <strong>Joy Susette V. Domingo</strong>, a Cum Laude Computer Science graduate from Batangas State University - The National Engineering University. I&apos;m interested in software development and practical applications that make complex things useful.</p>
           <div className="hero-actions">
-            <a className="button button--dark" href="#projects">Explore my work <ArrowDownRight size={17} aria-hidden="true" /></a>
-            <a className="text-link" href="mailto:joysusette@gmail.com">Get in touch <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <a className="button button--dark" href="#projects">Explore my work</a>
           </div>
-        </div>
-        <div className="hero-aside" aria-label="Availability and location">
-          <p className="hero-aside__label">Currently</p>
-          <p>Open to junior software development opportunities.</p>
-          <div className="hero-location"><MapPin size={15} aria-hidden="true" /> Cabuyao, Laguna, PH</div>
         </div>
       </div>
     </section>
@@ -92,7 +85,16 @@ const Home = () => (
       </div>
     </section>
 
-    <footer className="site-footer"><div><h2>Have a project in mind?</h2></div><a className="button button--light" href="mailto:joysusette@gmail.com"><Mail size={17} aria-hidden="true" /> Email Joy</a></footer>
+    <footer id="contact" className="site-footer">
+      <div>
+        <p className="footer-label">Get in touch</p>
+        <h2>Have a project in mind?</h2>
+      </div>
+      <div className="footer-contact">
+        <a href="mailto:joysusette@gmail.com"><Mail size={17} aria-hidden="true" /> joysusette@gmail.com</a>
+        <a href="tel:+639759663135">Viber: 09759663135</a>
+      </div>
+    </footer>
   </main>
 );
 

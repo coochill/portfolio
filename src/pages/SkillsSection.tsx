@@ -1,15 +1,18 @@
 import { Braces, Database, Palette } from "lucide-react";
 
 const badges = [
-  { label: "JavaScript", color: "F7DF1E", text: "111111" },
-  { label: "Python", color: "3776AB", text: "FFFFFF" },
-  { label: "React", color: "61DAFB", text: "111111" },
-  { label: "Tailwind CSS", color: "06B6D4", text: "FFFFFF" },
-  { label: "Flask", color: "111111", text: "FFFFFF" },
-  { label: "Node.js", color: "339933", text: "FFFFFF" },
-  { label: "Express.js", color: "111111", text: "FFFFFF" },
-  { label: "Firebase", color: "FFCA28", text: "111111" },
-  { label: "MySQL", color: "4479A1", text: "FFFFFF" },
+{ label: "JavaScript", color: "F7DF1E", text: "111111", logo: "javascript" },
+{ label: "TypeScript", color: "3178C6", text: "FFFFFF", logo: "typescript" },
+{ label: "PHP", color: "777BB4", text: "FFFFFF", logo: "php" },
+{ label: "Python", color: "3776AB", text: "FFFFFF", logo: "python" },
+{ label: "React", color: "61DAFB", text: "111111", logo: "react" },
+{ label: "Laravel", color: "FF2D20", text: "FFFFFF", logo: "laravel" },
+{ label: "Tailwind CSS", color: "06B6D4", text: "111111", logo: "tailwindcss" },
+{ label: "Flask", color: "333333", text: "FFFFFF", logo: "flask" },
+{ label: "Node.js", color: "339933", text: "FFFFFF", logo: "nodedotjs" },
+{ label: "Express.js", color: "555555", text: "FFFFFF", logo: "express" },
+{ label: "Firebase", color: "DD2C00", text: "FFFFFF", logo: "firebase" },
+{ label: "MySQL", color: "4479A1", text: "FFFFFF", logo: "mysql" },
 ];
 
 function SkillsSection() {
