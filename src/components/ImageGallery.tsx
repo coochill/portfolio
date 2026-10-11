@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState, type FC } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface GalleryItem {
   src: string;
@@ -12,58 +12,121 @@ interface ImageGalleryProps {
   items: GalleryItem[];
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ title, items }) => {
-  const scrollRef = useRef<HTMLDivElement | null>(null);
+const ImageGallery: FC<ImageGalleryProps> = ({ title, items }) => {
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const scroll = (direction: "next" | "prev") => {
-    if (scrollRef.current) {
-      const { clientWidth } = scrollRef.current;
-      const scrollAmount = direction === "next" ? clientWidth : -clientWidth;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
+    const track = trackRef.current;
+    if (!track) return;
+    const amount = track.clientWidth * 0.8;
+    track.scrollBy({
+      left: direction === "next" ? amount : -amount,
+      behavior: "smooth",
+    });
   };
 
+  const isOpen = activeIndex !== null;
+  const close = () => setActiveIndex(null);
+  const step = (delta: number) =>
+    setActiveIndex((i) => (i === null ? i : (i + delta + items.length) % items.length));
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveIndex(null);
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, items.length]);
+
+  const active = activeIndex !== null ? items[activeIndex] : null;
+
   return (
-    <div className="my-12 px-6 relative">
-      <h2 className="text-white text-[40px] font-semibold mb-6">{title}</h2>
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={() => scroll("prev")}
-        className="absolute left-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
-        aria-label="Previous"
-      >
-        <ChevronLeft size={20} aria-hidden="true" />
-      </button>
-      <button
-        onClick={() => scroll("next")}
-        className="absolute right-2 top-[50%] transform -translate-y-1/2 bg-white text-black text-2xl px-3 py-2 rounded-full shadow-md z-10 hover:bg-neutral-200 transition"
-        aria-label="Next"
-      >
-        <ChevronRight size={20} aria-hidden="true" />
-      </button>
-
-      {/* Scrollable Gallery */}
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto gap-6 scrollbar-hide snap-x snap-mandatory scroll-smooth px-8"
-      >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="snap-start flex-shrink-0 transition-transform duration-300 hover:scale-105"
+    <div className="gallery">
+      <div className="gallery__header">
+        <h3 className="gallery__title">{title}</h3>
+        <div className="gallery__controls">
+          <button
+            type="button"
+            onClick={() => scroll("prev")}
+            className="gallery__nav"
+            aria-label="Scroll left"
           >
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="max-w-[500px] max-h-[300px] object-contain rounded-2xl shadow-md"
-            />
-            {item.caption && (
-              <p className="text-white text-[18px] mt-2 text-center">{item.caption}</p>
-            )}
-          </div>
+            <ChevronLeft size={18} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scroll("next")}
+            className="gallery__nav"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={18} aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+
+      <div ref={trackRef} className="gallery__track">
+        {items.map((item, index) => (
+          <figure className="gallery__item" key={item.src}>
+            <button
+              type="button"
+              className="gallery__open"
+              onClick={() => setActiveIndex(index)}
+              aria-label={`View ${item.alt} full size`}
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" />
+            </button>
+            {item.caption && <figcaption>{item.caption}</figcaption>}
+          </figure>
         ))}
       </div>
+
+      {active && (
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={active.alt}
+          onClick={close}
+        >
+          <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox__close"
+              onClick={close}
+              aria-label="Close image viewer"
+            >
+              <X size={20} aria-hidden="true" />
+            </button>
+
+            <img src={active.src} alt={active.alt} />
+
+            {items.length > 1 && (
+              <div className="lightbox__nav">
+                <button type="button" onClick={() => step(-1)} aria-label="Previous image">
+                  <ChevronLeft size={20} aria-hidden="true" />
+                </button>
+                <span>
+                  {activeIndex! + 1} / {items.length}
+                </span>
+                <button type="button" onClick={() => step(1)} aria-label="Next image">
+                  <ChevronRight size={20} aria-hidden="true" />
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
