@@ -37,19 +37,54 @@ const logos = [
 
 const Home = () => (
   <main id="top">
-    <section className="hero-section" aria-labelledby="hero-title">
-      <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-inner">
-        <div className="hero-copy">
-          <p className="eyebrow">Junior software engineer</p>
-          <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
-          <p className="hero-philosophy">Grounded in fundamentals. Driven by curiosity. Building with purpose.</p>
-          <div className="hero-actions">
-            <a className="button button--dark" href="#projects">Explore my work</a>
-          </div>
-        </div>
+    <section className="hero-section hire-hero-section" aria-labelledby="hero-title">
+  <div className="hero-inner hire-hero">
+    <div className="hero-copy">
+      <div className="status-pill">
+        <span className="status-dot" aria-hidden="true" />
+        Open to junior software engineering roles
       </div>
-    </section>
+      <p className="eyebrow">Joy Susette · Junior software engineer</p>
+      <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
+      <p className="hero-philosophy">
+        I build web, Android, and IoT systems, and I care about the parts people don't see: clean logic, tested code, and data that makes sense.
+      </p>
+      <div className="hero-actions">
+        <a className="button button--dark" href="#projects">See what I've built</a>
+        <a className="button button--outline" href="#contact">Hire me</a>
+      </div>
+    </div>
+
+    <aside className="quest-card" aria-label="Quick profile">
+      <div className="quest-card__head">
+        <span>Player profile</span>
+        <span>Lv. 1</span>
+      </div>
+      <dl>
+        <div>
+          <dt>Class</dt>
+          <dd>Junior software engineer</dd>
+        </div>
+        <div>
+          <dt>Specialty</dt>
+          <dd>Full-stack web, Android, IoT</dd>
+        </div>
+        <div>
+          <dt>Core stack</dt>
+          <dd>React · Flask · Firebase · Java</dd>
+        </div>
+        <div>
+          <dt>Current quest</dt>
+          <dd>A team that ships real products and cares about how they're built</dd>
+        </div>
+      </dl>
+      <figure className="quest-card__art">
+        <img src={graphicTwo} alt="" />
+        <figcaption>Bakunawa, guardian of the sea</figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
 
     <AboutSection />
 
@@ -62,14 +97,45 @@ const Home = () => (
         </div>
         <div className="project-grid">
           {projects.map((project) => (
-            <article
-              className="project-card"
-              style={{ backgroundColor: project.accent }}
-              key={project.title}
-            >
-              <div className="project-card__top"><span>{project.number}</span>{project.url && <a href={project.url} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`}><Github size={19} /></a>}</div>
-              <div><p className="project-type">{project.type}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p></div>
-              <div className="project-card__bottom"><div className="project-stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>{project.url && <a href={project.url} target="_blank" rel="noreferrer" className="project-link">Repository <ArrowUpRight size={15} /></a>}</div>
+                        <article className="project-card" key={project.title}>
+              <div className="project-card__top">
+                <span>{project.number}</span>
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.title} on GitHub`}
+                  >
+                    <Github size={19} />
+                  </a>
+                )}
+              </div>
+
+              <div>
+                <p className="project-type">{project.type}</p>
+                <h3>{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+              </div>
+
+              <div className="project-card__bottom">
+                <div className="project-stack">
+                  {project.stack.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-link"
+                  >
+                    Repository <ArrowUpRight size={15} />
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
