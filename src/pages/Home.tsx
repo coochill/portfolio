@@ -11,6 +11,7 @@ import logoOne from "../assets/Geominder-logo.png";
 import logoTwo from "../assets/Geominder-logo-2.png";
 import logoThree from "../assets/recursive-logo.png";
 import logoFour from "../assets/recursive-logo-2.png";
+import profilePhoto from "../assets/profile-pic-new.jpg";
 
 const projects = [
   { number: "01", title: "CodeCrypt v2.0", type: "Educational cipher learning platform · September 2025 - December 2025", description: "An educational web platform for learning cryptography through interactive activities, including MineCipher, a Vigenère cipher learning game with adjustable difficulty.", stack: ["React", "Vite", "Tailwind CSS", "Flask"], url: "https://github.com/coochill/CodeCrypt-v2.0", accent: "#0074d2" },
@@ -51,6 +52,9 @@ const Home = () => (
           </div>
         </div>
         <div className="hero-aside" aria-label="Availability and location">
+          <div className="hero-portrait-wrap">
+            <img src={profilePhoto} alt="Joy Susette Domingo" className="hero-portrait" />
+          </div>
           <p className="hero-aside__label">Currently</p>
           <p>Open to junior software development opportunities.</p>
           <div className="hero-location"><MapPin size={15} aria-hidden="true" /> Cabuyao, Laguna, PH</div>
@@ -63,7 +67,7 @@ const Home = () => (
     <section id="projects" className="section section--ink">
       <div className="section-inner">
         <div className="section-heading section-heading--light">
-          <p className="eyebrow">01 / selected work</p>
+          <p className="eyebrow">Selected work</p>
           <h2>Projects with a purpose behind the interface.</h2>
           <p>A small selection of collaborative, academic, and independent work. Each one started with a problem worth understanding.</p>
         </div>
@@ -87,12 +91,12 @@ const Home = () => (
 
     <section id="bonus" className="section section--paper">
       <div className="section-inner">
-        <div className="section-heading"><p className="eyebrow">03 / bonus</p><h2>A little room for visual experiments.</h2><p>Graphic studies and identity work live here, intentionally kept secondary to the software projects.</p></div>
+        <div className="section-heading"><h2>A little room for visual experiments.</h2><p>Graphic studies and identity work live here, intentionally kept secondary to the software projects.</p></div>
         <div className="bonus-gallery"><ImageGallery title="Graphic studies" items={graphics} /><ImageGallery title="Project marks" items={logos} /></div>
       </div>
     </section>
 
-    <footer className="site-footer"><div><p className="eyebrow">Let&apos;s make something useful.</p><h2>Have a project in mind?</h2></div><a className="button button--light" href="mailto:joysusette@gmail.com"><Mail size={17} aria-hidden="true" /> Email Joy</a></footer>
+    <footer className="site-footer"><div><h2>Have a project in mind?</h2></div><a className="button button--light" href="mailto:joysusette@gmail.com"><Mail size={17} aria-hidden="true" /> Email Joy</a></footer>
   </main>
 );
 

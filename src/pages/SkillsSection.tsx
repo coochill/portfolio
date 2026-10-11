@@ -17,7 +17,6 @@ function SkillsSection() {
     <section id="skills" className="section section--cream">
       <div className="section-inner">
         <div className="section-heading">
-          <p className="eyebrow">02 / toolkit</p>
           <h2>Tools for thoughtful, useful software.</h2>
           <p>Technologies I have worked with across coursework, personal builds, and collaborative projects.</p>
         </div>

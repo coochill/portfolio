@@ -6,7 +6,6 @@ const AboutSection = () => (
     <div className="section-inner about-inner">
       <div className="about-photo-wrap"><img src={profilePhoto} alt="Joy Susette Domingo" className="about-photo" /></div>
       <div className="about-copy">
-        <p className="eyebrow">About me</p>
         <h2>Engineering with context.</h2>
         <p>I build from fundamentals: understand the problem, make the system legible, and choose tools that serve the people using it.</p>
         <p>My foundation spans frontend and backend development, data, testing, and UI/UX. I learn quickly, work reliably, and enjoy adapting emerging technologies such as AI when they have a clear, useful role.</p>
