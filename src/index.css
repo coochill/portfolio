@@ -1044,3 +1044,7 @@ body {
     align-items: flex-start;
   }
 }
+
+.about-copy p + p {
+  text-indent: 2em;
+}

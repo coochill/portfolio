@@ -58,10 +58,10 @@ const Home = () => (
     <section className="hero-section hire-hero-section" aria-labelledby="hero-title">
   <div className="hero-inner hire-hero">
     <div className="hero-copy">
-      <div className="status-pill">
+      {/* <div className="status-pill">
         <span className="status-dot" aria-hidden="true" />
         Open to junior software engineering roles
-      </div>
+      </div> */}
       <p className="eyebrow">Junior software engineer</p>
       <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
       <p className="hero-philosophy">
@@ -73,30 +73,30 @@ const Home = () => (
       </div>
     </div>
 
-    <aside className="quest-card" aria-label="Quick profile">
-      <div className="quest-card__head">
-        <span>Player profile</span>
-        <span>Lv. 1</span>
+      <aside className="quest-card" aria-label="Profile summary">
+    <div className="quest-card__head">
+      <span>Joy Susette Domingo</span>
+      <span>Cabuyao, Laguna</span>
+    </div>
+    <dl>
+      <div>
+        <dt>Title</dt>
+        <dd>Junior software engineer</dd>
       </div>
-      <dl>
-        <div>
-          <dt>Class</dt>
-          <dd>Junior software engineer</dd>
-        </div>
-        <div>
-          <dt>Specialty</dt>
-          <dd>Full-stack web, Android</dd>
-        </div>
-        <div>
-          <dt>Core stack</dt>
-          <dd>PHP · Laravel · Python · React · Flask · Firebase · JavaScript</dd>
-        </div>
-        <div>
-          <dt>Current quest</dt>
-          <dd>A team that ships real products and cares about how they're built</dd>
-        </div>
-      </dl>
-    </aside>
+      <div>
+        <dt>Focus</dt>
+        <dd>Full-stack web, Android</dd>
+      </div>
+      <div>
+        <dt>Stack</dt>
+        <dd>PHP · Laravel · Python · React · Flask · Firebase · JavaScript</dd>
+      </div>
+      <div>
+        <dt>Seeking</dt>
+        <dd>Opportunities to build useful software and make an impact through engineering</dd>
+      </div>
+    </dl>
+  </aside>
   </div>
 </section>
 
