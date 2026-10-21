@@ -5,6 +5,7 @@ interface GalleryItem {
   src: string;
   alt: string;
   caption?: string;
+  background?: string; // optional, e.g. "#f7f3e9"
 }
 
 interface ImageGalleryProps {
@@ -81,6 +82,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ title, items }) => {
             <button
               type="button"
               className="gallery__open"
+              style={{ background: item.background }}
               onClick={() => setActiveIndex(index)}
               aria-label={`View ${item.alt} full size`}
             >
@@ -97,6 +99,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({ title, items }) => {
           role="dialog"
           aria-modal="true"
           aria-label={active.alt}
+          style={{ background: active.background }}
           onClick={close}
         >
           <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
