@@ -99,7 +99,6 @@ const ImageGallery: FC<ImageGalleryProps> = ({ title, items }) => {
           role="dialog"
           aria-modal="true"
           aria-label={active.alt}
-          style={{ background: active.background }}
           onClick={close}
         >
           <div className="lightbox__content" onClick={(e) => e.stopPropagation()}>
@@ -112,7 +111,9 @@ const ImageGallery: FC<ImageGalleryProps> = ({ title, items }) => {
               <X size={20} aria-hidden="true" />
             </button>
 
-            <img src={active.src} alt={active.alt} />
+              <div className="lightbox__stage" style={{ background: active.background }}>
+                <img src={active.src} alt={active.alt} />
+              </div>
 
             {items.length > 1 && (
               <div className="lightbox__nav">

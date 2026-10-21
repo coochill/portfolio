@@ -51,6 +51,18 @@ a:focus-visible, button:focus-visible { outline: 3px solid #2f6b4f; outline-offs
   justify-content: center;
   width: 40px;
 }
+.lightbox__stage {
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.lightbox__stage img {
+  background: none;
+  display: block;
+  max-height: 78vh;
+  max-width: min(92vw, 1000px);
+  object-fit: contain;
+}
 
 
 /* Hero branding */
