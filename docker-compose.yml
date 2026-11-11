@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app                # Sync your code so changes reload
+      - /app/node_modules     # Keep container's node_modules, not your host's
