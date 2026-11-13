@@ -1,6 +1,7 @@
 import { ArrowUpRight, Github, Mail } from "lucide-react";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
+import ScrollHero from "../components/ScrollHero";
 import ImageGallery from "../components/ImageGallery";
 import graphicOne from "../assets/datu_torch.png";
 import graphicTwo from "../assets/bakunawa-animation.gif";
@@ -13,13 +14,36 @@ import logoThree from "../assets/recursive-logo.png";
 import logoFour from "../assets/recursive-logo-2.png";
 
 
+
 const projects = [
-  { number: "01", title: "CodeCrypt v2.0", type: "Educational cipher learning platform · September 2025 - December 2025", description: "An educational web platform for learning cryptography through interactive activities, including MineCipher, a Vigenère cipher learning game with adjustable difficulty.", stack: ["React", "Vite", "Tailwind CSS", "Flask"], url: "https://github.com/coochill/CodeCrypt-v2.0", accent: "#0074d2" },
-  { number: "02", title: "GoCery", type: "Android grocery management application · March 2025 - April 2025", description: "An Android grocery management application supporting store and customer workflows, inventory management, purchase history, and Firebase-backed data operations. Includes automated functional and UI testing.", stack: ["Java", "Android Studio", "Firebase Database", "JUnit", "AndroidX Test", "Espresso", "Mockito", "Hamcrest"], url: "https://github.com/MannLester/GoCery", accent: "#fffd3c" },
-  { number: "03", title: "WattWise", type: "IoT energy monitoring system · February 2026 - May 2026", description: "An IoT-based energy monitoring system that combines real-time electrical data with a web dashboard for monitoring consumption and secure role-based system management.", stack: ["React", "Node.js", "Express.js", "Firebase", "ESP32", "PZEM-004T"], url: "https://github.com/coochill/WattWise", accent: "#fffd61" },
-  { number: "04", title: "Neburix", type: "Asthma intelligence and care companion · May 2026", description: "A health companion web application for asthma tracking, combining health logs, medication tracking, data visualization, and nearby hospital information.", stack: ["React 19", "Vite", "Tailwind CSS", "Firebase Auth/Firestore", "Chart.js", "jsPDF", "Flask"], url: "https://github.com/coochill/neburix", accent: "#6197ff" },
-  { number: "05", title: "SCB-YOLO - Thesis", type: "Multi-class face accessory detection · September 2025 - May 2026", description: "A computer vision research project for disguised face detection using YOLOv12 with Squeeze-and-Excitation blocks, class-weighted loss, DeepSORT tracking, and Bayesian fusion for video detection refinement. Evaluated on a 7,000-image and 52-video dataset with reported image and video results.", stack: ["YOLOv12", "PyTorch", "SE Blocks", "Class-Weighted Loss", "DeepSORT", "Bayesian Fusion", "Roboflow", "CVAT"], accent: "#7590c5" },
-  { number: "06", title: "SchedPx", type: "Patient Scheduling & Case Management System · September 2026", description: "A full-stack patient scheduling and case management system designed to help studentists organize patient records, manage patient cases, track case progress through customizable checklists, and schedule appointments. The system includes configurable case types, patient-specific case records, appointment management, and task tracking.", stack: ["PHP", "Laravel", "React", "MySQL", "REST API", "Docker"], url: "https://github.com/coochill/studentist-scheduler", accent: "#e2d962" },
+   
+{
+  number: "01",
+  title: "ERPFlow",
+  type: "Full-stack ERP & AI-assisted business operations platform",
+  description:
+    "An inventory and business operations management system featuring inventory tracking, supplier management, purchase requests, goods receiving, and a Python-based ETL import pipeline. Includes a policy-document RAG assistant integrated with the Gemini API, automated tests, and performance improvements that reduced response times by approximately 86.5%–94.4% across five core endpoints.",
+  stack: [
+    "Laravel",
+    "React",
+    "TypeScript",
+    "MySQL",
+    "Python",
+    "Docker",
+    "ETL",
+    "RAG",
+    "Gemini API",
+  ],
+  url: "https://github.com/coochill/erpflow",
+  accent: "#087e8b",
+},
+   { number: "02", title: "SchedPx", type: "Patient Scheduling & Case Management System · September 2026", description: "A full-stack patient scheduling and case management system designed to help studentists organize patient records, manage patient cases, track case progress through customizable checklists, and schedule appointments. The system includes configurable case types, patient-specific case records, appointment management, and task tracking.", stack: ["PHP", "Laravel", "React", "MySQL", "REST API", "Docker"], url: "https://github.com/coochill/studentist-scheduler", accent: "#e2d962" },
+
+  { number: "03", title: "CodeCrypt v2.0", type: "Educational cipher learning platform · September 2025 - December 2025", description: "An educational web platform for learning cryptography through interactive activities, including MineCipher, a Vigenère cipher learning game with adjustable difficulty.", stack: ["React", "Vite", "Tailwind CSS", "Flask"], url: "https://github.com/coochill/CodeCrypt-v2.0", accent: "#0074d2" },
+  { number: "04", title: "GoCery", type: "Android grocery management application · March 2025 - April 2025", description: "An Android grocery management application supporting store and customer workflows, inventory management, purchase history, and Firebase-backed data operations. Includes automated functional and UI testing.", stack: ["Java", "Android Studio", "Firebase Database", "JUnit", "AndroidX Test", "Espresso", "Mockito", "Hamcrest"], url: "https://github.com/MannLester/GoCery", accent: "#fffd3c" },
+  { number: "05", title: "WattWise", type: "IoT energy monitoring system · February 2026 - May 2026", description: "An IoT-based energy monitoring system that combines real-time electrical data with a web dashboard for monitoring consumption and secure role-based system management.", stack: ["React", "Node.js", "Express.js", "Firebase", "ESP32", "PZEM-004T"], url: "https://github.com/coochill/WattWise", accent: "#fffd61" },
+  { number: "06", title: "Neburix", type: "Asthma intelligence and care companion · May 2026", description: "A health companion web application for asthma tracking, combining health logs, medication tracking, data visualization, and nearby hospital information.", stack: ["React 19", "Vite", "Tailwind CSS", "Firebase Auth/Firestore", "Chart.js", "jsPDF", "Flask"], url: "https://github.com/coochill/neburix", accent: "#6197ff" },
+  { number: "07", title: "SCB-YOLO - Thesis", type: "Multi-class face accessory detection · September 2025 - May 2026", description: "A computer vision research project for disguised face detection using YOLOv12 with Squeeze-and-Excitation blocks, class-weighted loss, DeepSORT tracking, and Bayesian fusion for video detection refinement. Evaluated on a 7,000-image and 52-video dataset with reported image and video results.", stack: ["YOLOv12", "PyTorch", "SE Blocks", "Class-Weighted Loss", "DeepSORT", "Bayesian Fusion", "Roboflow", "CVAT"], accent: "#7590c5" },
 ];
 
 const graphics = [
@@ -55,51 +79,7 @@ const ViberIcon = ({ size = 30 }) => (
 
 const Home = () => (
   <main id="top">
-    <section className="hero-section hire-hero-section" aria-labelledby="hero-title">
-  <div className="hero-inner hire-hero">
-    <div className="hero-copy">
-      {/* <div className="status-pill">
-        <span className="status-dot" aria-hidden="true" />
-        Open to junior software engineering roles
-      </div> */}
-      <p className="eyebrow">Junior software engineer</p>
-      <h1 id="hero-title">Finding <span className="hero-word-accent">joy</span> in solving problems.</h1>
-      <p className="hero-philosophy">
-        I build web, Android, and IoT systems, and I care about the parts people don't see: clean logic, tested code, and data that makes sense.
-      </p>
-      <div className="hero-actions">
-        <a className="button button--dark" href="#projects">See what I've built</a>
-        <a className="button button--outline" href="#contact">Hire me</a>
-      </div>
-    </div>
-
-      <aside className="quest-card" aria-label="Profile summary">
-    <div className="quest-card__head">
-      <span>Joy Susette Domingo</span>
-      <span>Cabuyao, Laguna</span>
-    </div>
-    <dl>
-      <div>
-        <dt>Title</dt>
-        <dd>Junior software engineer</dd>
-      </div>
-      <div>
-        <dt>Focus</dt>
-        <dd>Full-stack web, Android</dd>
-      </div>
-      <div>
-        <dt>Stack</dt>
-        <dd>PHP · Laravel · Python · React · Flask · Firebase · JavaScript</dd>
-      </div>
-      <div>
-        <dt>Seeking</dt>
-        <dd>Opportunities to build useful software and make an impact through engineering</dd>
-      </div>
-    </dl>
-  </aside>
-  </div>
-</section>
-
+  <ScrollHero />
     <AboutSection />
 
     <section id="projects" className="section section--ink">
