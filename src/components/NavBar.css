@@ -1,0 +1,225 @@
+
+.site-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1050px, calc(100% - 64px));
+  min-height: 64px;
+  padding: 0 10px 0 20px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(220, 239, 242, 0.10);
+  border-radius: 999px;
+  background: rgba(8, 47, 73, 0.42);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 20, 35, 0.08);
+  color: #dceff2;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #dceff2;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-mark__logo {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.desktop-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 34px);
+}
+
+.desktop-links > a {
+  position: relative;
+  color: rgba(220, 239, 242, 0.72);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.desktop-links > a:not(.nav-contact)::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #64c7c1;
+  content: "";
+  transition: transform 0.25s ease;
+}
+
+.desktop-links > a:hover {
+  color: #64c7c1;
+}
+
+.desktop-links > a:hover::after {
+  transform: scaleX(1);
+}
+
+.desktop-links .nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #64c7c1;
+  color: #082f49;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.desktop-links .nav-contact:hover {
+  transform: translateY(-2px);
+  background: #dceff2;
+  color: #082f49;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(220, 239, 242, 0.2);
+  border-radius: 50%;
+  background: rgba(220, 239, 242, 0.08);
+  color: #dceff2;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 760px) {
+ .site-nav {
+   top: 12px;
+   width: calc(100% - 36px);
+   min-height: 58px;
+   padding: 0 9px 0 16px;
+   border-radius: 22px;
+   background: rgba(8, 47, 73, 0.48);
+}
+  .brand-mark {
+    gap: 9px;
+    font-size: 12px;
+  }
+
+  .brand-mark__logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .desktop-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    border: 1px solid rgba(220, 239, 242, 0.14);
+    border-radius: 22px;
+    background: rgba(8, 47, 73, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 16px 40px rgba(0, 20, 35, 0.22);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu > a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 13px;
+    border-radius: 12px;
+    color: #dceff2;
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .mobile-menu > a span {
+    color: #64c7c1;
+    font-family: "DM Mono", monospace;
+    font-size: 10px;
+  }
+
+  .mobile-menu > a svg {
+    margin-left: auto;
+    color: #64c7c1;
+  }
+
+  .mobile-menu > a:hover {
+    background: rgba(220, 239, 242, 0.08);
+  }
+
+  .mobile-menu > .mobile-menu__contact {
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 15px;
+    background: #64c7c1;
+    color: #082f49;
+  }
+
+  .mobile-menu > .mobile-menu__contact svg {
+    color: #082f49;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktop-links > a,
+  .desktop-links .nav-contact,
+  .mobile-menu {
+    transition: none;
+  }
+}
