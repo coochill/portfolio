@@ -1,7 +1,8 @@
-import { ArrowUpRight, Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import AboutSection from "./AboutSection";
 import SkillsSection from "./SkillsSection";
 import ScrollHero from "../components/ScrollHero";
+import PinnedProject from "../components/PinnedProject";
 import ImageGallery from "../components/ImageGallery";
 import graphicOne from "../assets/datu_torch.png";
 import graphicTwo from "../assets/bakunawa-animation.gif";
@@ -80,61 +81,10 @@ const ViberIcon = ({ size = 30 }) => (
 const Home = () => (
   <main id="top">
   <ScrollHero />
+
     <AboutSection />
 
-    <section id="projects" className="section section--ink">
-      <div className="section-inner">
-        <div className="section-heading section-heading--light">
-          <p className="eyebrow-diff">Selected work</p>
-          <h2>Projects with a purpose behind the interface.</h2>
-          <p>A small selection of collaborative, academic, and independent work. Each one started with a problem worth understanding.</p>
-        </div>
-        <div className="project-grid">
-          {projects.map((project) => (
-                        <article className="project-card" key={project.title}>
-              <div className="project-card__top">
-                <span>{project.number}</span>
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${project.title} on GitHub`}
-                  >
-                    <Github size={19} />
-                  </a>
-                )}
-              </div>
-
-              <div>
-                <p className="project-type">{project.type}</p>
-                <h3>{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-              </div>
-
-              <div className="project-card__bottom">
-                <div className="project-stack">
-                  {project.stack.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
-
-                {project.url && (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-link"
-                  >
-                    Repository <ArrowUpRight size={15} />
-                  </a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    <PinnedProject projects={projects} />
 
     <SkillsSection />
 

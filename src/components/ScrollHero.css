@@ -27,6 +27,7 @@
 
 .scroll-hero-canvas {
   display: block;
+  pointer-events: none;
 }
 
 .scroll-hero-overlay {
@@ -48,10 +49,16 @@
 .scroll-hero-content {
   position: absolute;
   z-index: 2;
-  top: 50%;
+  top: 0;
+  bottom: 0;
   left: max(8%, calc((100% - 1200px) / 2));
   width: min(650px, 84%);
-  transform: translateY(-50%);
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0 80px;
 }
 
 .scroll-hero-content h1,
@@ -86,10 +93,25 @@
 }
 
 .scroll-hero-actions {
+  position: relative;
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 30px;
+  pointer-events: auto;
+}
+
+.scroll-hero-actions a {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.scroll-hero-loader,
+.scroll-hero-scroll-hint {
+  pointer-events: none;
 }
 
 .scroll-hero-middle,
@@ -164,4 +186,21 @@
   .scroll-hero-outro {
     display: none;
   }
+}
+
+.scroll-hero-canvas {
+  pointer-events: none;
+}
+
+.scroll-hero-overlay {
+  pointer-events: none;
+}
+
+.scroll-hero-content {
+  pointer-events: none;
+}
+
+.scroll-hero-actions,
+.scroll-hero-actions a {
+  pointer-events: auto;
 }

@@ -175,11 +175,8 @@ function ScrollHero() {
           </p>
           <div className="scroll-hero-actions">
             <a className="button button--dark" href="#projects">
-              See what I've built
-            </a>
-            <a className="button button--outline" href="#contact">
-              Hire me
-            </a>
+  See what I've built
+</a>
           </div>
         </div>
 
@@ -195,9 +192,6 @@ function ScrollHero() {
         <div ref={outroRef} className="scroll-hero-content scroll-hero-outro">
           <p className="scroll-hero-eyebrow">Joy Susette Domingo</p>
           <h2>Let's build something meaningful.</h2>
-          <a className="button button--outline" href="#about">
-            Get to know me
-          </a>
         </div>
 
         <div className="scroll-hero-loader" aria-live="polite">
