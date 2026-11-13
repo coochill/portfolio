@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import logo from "../assets/logo-dark.svg";
+import logo from "../assets/logo-light.svg";
 import "./NavBar.css";
 
 const NavBar = () => {
@@ -17,9 +17,9 @@ const NavBar = () => {
         aria-label="Return to top"
         onClick={() => setIsOpen(false)}
       >
-        <img src={logo} alt="" className="brand-mark__logo" />
-        <span>Joy Susette Domingo</span>
-      </a>
+        <img src={logo} alt="" className="brand-mark__logo" />      
+
+</a>
 
       <div className="desktop-links">
         {links.map((link) => (
