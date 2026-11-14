@@ -1063,3 +1063,91 @@ body {
 .about-copy p + p {
   text-indent: 2em;
 }
+
+.about-copy > p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  text-align-last: left; /* keeps the last line of each paragraph left-aligned */
+}
+
+/* Tool tiles */
+.tool-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+}
+
+.tool-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+/* Border lights up in the tool's brand color */
+.tool-tile:hover {
+  border-color: color-mix(in srgb, var(--brand) 60%, transparent);
+}
+
+.tool-tile__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+/* Radial glow behind the icon, tinted by --brand */
+.tool-tile__icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.6);
+  transition: filter 0.3s ease;
+}
+
+.tool-tile:hover .tool-tile__icon {
+  filter: none;
+}
+
+.tool-tile__glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand) 38%, transparent) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tool-tile:hover .tool-tile__glow {
+  opacity: 1;
+}
+
+.tool-tile__label {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .tool-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+  }
+}
