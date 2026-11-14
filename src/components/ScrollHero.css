@@ -204,3 +204,22 @@
 .scroll-hero-actions a {
   pointer-events: auto;
 }
+
+.scroll-hero-content {
+  /* Keep the content clear of the fixed nav */
+  padding: clamp(110px, 16vh, 150px) 0 100px;
+  /* "safe center" centers the content but never pushes the top past the padding */
+  justify-content: safe center;
+}
+
+.scroll-hero-content h1,
+.scroll-hero-content h2 {
+  /* Scale the headline with viewport height too, so short laptop screens fit */
+  font-size: clamp(2.8rem, min(7vw, 11vh), 6.5rem);
+}
+
+@media (max-width: 700px) {
+  .scroll-hero-content {
+    padding: clamp(100px, 14vh, 130px) 0 90px;
+  }
+}
