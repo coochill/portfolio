@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { motion, MotionConfig, type Variants } from "framer-motion";
 import { Code2, Database, Smartphone, Brain, type LucideIcon } from "lucide-react";
 
@@ -44,7 +43,7 @@ const skillGroups: SkillGroup[] = [
       { label: "Python", slug: "python", color: "3776AB" },
       { label: "Flask", slug: "flask", color: "333333" },
       { label: "Node.js", slug: "nodejs", color: "339933" },
-      { label: "Express.js", slug: "express", color: "555555" },
+      { label: "Express.js", slug: "expressdotjs", color: "555555" },
       { label: "Firebase", slug: "firebase", color: "DD2C00" },
       { label: "MySQL", slug: "mysql", color: "4479A1" },
     ],
@@ -98,19 +97,6 @@ const tile: Variants = {
   hover: {},
 };
 
-// Hover: icon lifts with a snappy spring
-const icon: Variants = {
-  hidden: {},
-  show: {},
-  hover: {
-    y: -3,
-    scale: 1.06,
-    transition: { type: "spring", stiffness: 400, damping: 25 },
-  },
-};
-
-// Hover: radial glow fades in behind the icon
-
 function SkillsSection() {
   return (
     <section id="skills" className="section section--cream">
@@ -138,25 +124,23 @@ function SkillsSection() {
                   {group.title}
                 </h3>
 
-                <motion.div className="tool-grid" variants={tileStagger} custom={groupIndex}>
+                <motion.div className="tool-grid flex flex-wrap gap-3" variants={tileStagger} custom={groupIndex}>
                   {group.tools.map((tool) => (
                     <motion.div
                       key={tool.label}
-                      className="tool-tile group"
-                      style={{ "--brand": `#${tool.color}` } as CSSProperties}
+                      className="tool-tile px-4 py-2.5 rounded-xl"
                       variants={tile}
-                      whileHover="hover"
                     >
-                      <div className="tool-tile__media">
-                        <span className="tool-tile__glow" aria-hidden="true" />
-                        <motion.img
-  src={iconUrl(tool.slug)}
-  alt=""
-  className="tool-tile__icon"
-  variants={icon}
-  loading="lazy"
-/>
-                      </div>
+                      <img
+                        src={iconUrl(tool.slug)}
+                        alt=""
+                        className={`tool-tile__icon w-5 h-5 shrink-0${
+                          ["php", "mysql", "expressdotjs"].includes(tool.slug)
+                            ? " tool-tile__icon--monochrome"
+                            : ""
+                        }`}
+                        loading="lazy"
+                      />
                       <span className="tool-tile__label">{tool.label}</span>
                     </motion.div>
                   ))}
